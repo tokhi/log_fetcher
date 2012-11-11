@@ -1,0 +1,15 @@
+dbconnection:
+  adapter: postgres 
+  database: mydb
+  host: localhost
+  username: postgres
+  password: postgres
+loadavg:
+  readfile: /proc/loadavg
+  interval: 60
+discspace:
+  shellexec: df -h
+  interval: 120
+responsetime:
+  responsetime: http://www.ubuntu.com
+  interval: 300

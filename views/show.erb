@@ -1,0 +1,18 @@
+<a href = "/"> Back to home </a>
+<br/><br/>
+<table border=1>
+	<tr>
+		<th> Hostname</th>
+		<th> Timestamp </th>
+		<th> Log ID </th>
+		<th> Response </th>
+	</tr>
+	
+	<tr>
+		<td> <%= @log.hostname %></td>
+		<td> <%= @log.timestamp.to_i %></td>
+		<td> <%= @log.log_id %>   </td>
+		<td> <xmp><%= @log.response %> </xmp> </td>
+	</tr>
+
+</table>

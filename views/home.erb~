@@ -1,0 +1,33 @@
+<h1> Logs </h1>
+	<form action="/search" method="post">
+		<input type="text" name="key" placeholder="e.g; serarch term&hellip;"></input>
+		<select name="category"> 
+			<option value="id" > Data Id </option>
+			<option value="timestamp" >Time-Stamp</option>
+			<option value="24-hrs" >Last 24 Hours</option>
+			<option value="hostname" >Hostname</option>
+		</select>
+		<input type="submit" value="Search!">
+	
+	</form>
+<hr/>
+
+<table border=0>
+	<tr>
+		<th> Hostname</th>
+		<th> Timestamp </th>
+		<th> Log ID </th>
+		<th> Response </th>
+	</tr>
+	
+	<% @logs.each do |log| %>
+		<tr>
+			<td> <%= log.hostname %></td>
+			<td> <%= log.timestamp.to_i %></td>
+			<td> <%= log.log_id %>   </td>
+			<td>
+			<a href="/<%= log.id %>"> <xmp><%=log.response[0..100] %></xmp>[more..] </a></td>
+		</tr>
+	
+	<% end %>
+</table>
