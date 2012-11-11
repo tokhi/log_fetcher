@@ -141,8 +141,6 @@ def load_file
     elsif(key == RESPONSE_TIME) 
       cmd[4] = @config.fetch(key)['responsetime']
       cmd[5] = @config.fetch(key)['interval']
-    elsif(key != 'dbconnection' and LOAD_AVG and key != DIS_SPACE and key != RESPONSE_TIME)
-       raise "Command Not Found!"
     end #if ends
   end #loop ends
   return cmd
