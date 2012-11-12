@@ -142,15 +142,23 @@ def load_file
       cmd[4] = @config.fetch(key)['responsetime']
       cmd[5] = @config.fetch(key)['interval']
     elsif(@config.fetch(LOAD_AVG).keys[0] != 'readfile' and @config.fetch(DISC_SPACE).keys[0] != 'shellexec')
-      raise "Command Not Found!"
+      begin
+        raise
+      rescue
+        puts "command not found. Quite!"
+      end
    end #if ends
   end #loop ends
   return cmd
 end
 
 #************************************************************************************************************************
+begin
 # calls method load_file..
-cmd = load_file
+  cmd = load_file
+rescue
+end
+
 # assigns array indexes..
 file = cmd[0]
 file_interval = cmd[1]
