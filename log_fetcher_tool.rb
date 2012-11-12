@@ -141,7 +141,9 @@ def load_file
     elsif(key == RESPONSE_TIME) 
       cmd[4] = @config.fetch(key)['responsetime']
       cmd[5] = @config.fetch(key)['interval']
-    end #if ends
+    elsif(@config.fetch(LOAD_AVG).keys[0] != 'readfile' and @config.fetch(DISC_SPACE).keys[0] != 'shellexec')
+      raise "Command Not Found!"
+   end #if ends
   end #loop ends
   return cmd
 end
