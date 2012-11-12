@@ -178,5 +178,5 @@ begin
   t3.join
 rescue Exception => e
   puts "EXCEPTION: #{e.inspect}"
-  puts "MESSAGE: #{e.message}"
+  #puts "MESSAGE: #{e.message}"
 end
